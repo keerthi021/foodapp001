@@ -1,0 +1,479 @@
+/* Navbar styles */
+.navbar {
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Logo left */
+.navbar-logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff4d4f;
+}
+
+/* Center links */
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #ff4d4f;
+}
+
+/* Cart right */
+.navbar-cart a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.navbar-cart a:hover {
+  color: #ff4d4f;
+}
+/* Home full screen with colorful background */
+.home-container {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px; /* Avoid navbar overlap */
+  box-sizing: border-box;
+  text-align: center;
+
+  /* Same animated gradient background */
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+/* Reuse animated gradient */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ff4d4f, #ffeb3b, #4caf50, #2196f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #fff176; /* bright yellow text */
+}
+
+/* Explore button */
+.explore-btn {
+  padding: 0.9rem 2rem;
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.explore-btn:hover {
+  background: #e63946;
+}
+
+/* Reset body and html */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Ensure app container doesn't push beyond screen */
+#root {
+  width: 100%;
+  height: 100%;
+}
+.about-container {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: #fff;
+}
+
+/* Animated gradient background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Brighter text */
+.about-container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ff4d4f, #ffeb3b, #4caf50, #2196f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.about-container p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-bottom: 1rem;
+  color: #fff176; /* bright yellow text */
+}
+
+/* Highlighted words */
+.highlight {
+  color: #ff5722; /* bright orange */
+  font-weight: bold;
+}
+/* Restaurants grid */
+.restaurant-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px; /* optional max width */
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Restaurant card */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 140px; /* smaller, card-type */
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 1rem;
+  color: #333;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin: 0.25rem 1rem 0.75rem;
+  color: #666;
+}
+.restaurant-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .restaurant-row {
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 1rem;
+  }
+}
+.restaurant-row {
+  display: flex;
+  flex-wrap: wrap;           /* allow wrapping to next row */
+  justify-content: center;    /* center the row */
+  gap: 1.5rem;               /* space between cards */
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.restaurant-card {
+  flex: 1 1 45%;             /* 2 cards per row */
+  max-width: 300px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  background: #fff;          /* card background white */
+}
+
+.restaurant-card:hover {
+  transform: scale(1.03);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 180px;            /* make restaurant images reasonable size */
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.restaurant-card h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.restaurant-card p {
+  margin: 0.2rem 0 0.5rem 0;
+  color: #666;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .restaurant-card {
+    flex: 1 1 90%; /* single card per row on small screens */
+  }
+}
+
+
+/* Dish grid */
+.dish-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Dish card */
+.dish-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.dish-card:hover {
+  transform: translateY(-5px);
+}
+
+.dish-card img {
+  width: 100%;
+  height: 120px; /* smaller, card type */
+  object-fit: cover;
+}
+
+.dish-card h3 {
+  margin: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.dish-card p {
+  margin: 0 0 0.5rem 0;
+  color: #ff4d4f;
+  font-weight: bold;
+}
+/* Dish grid */
+.dish-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Dish card */
+.dish-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+
+.dish-card:hover {
+  transform: translateY(-5px);
+}
+
+.dish-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.dish-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.dish-card p {
+  margin: 0.2rem 0;
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+.dish-card button {
+  margin-top: 0.5rem;
+  padding: 6px 12px;
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dish-card button:hover {
+  background: #e03e3f;
+}
+
+/* Cart summary */
+.cart-summary {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.cart-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-summary li {
+  margin-bottom: 0.5rem;
+}
+.checkout-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.cart-table th, .cart-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.cart-table th {
+  background-color: #ff4d4f;
+  color: #fff;
+}
+
+.cart-table button {
+  padding: 3px 8px;
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-table button:hover {
+  background-color: #ff7875;
+}
+
+.cart-summary {
+  text-align: right;
+}
+
+.checkout-btn {
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background-color: #ff7875;
+}
+/* Background color for all main pages */
+body, .home-screen, .restaurants-menu, .restaurant-page, .checkout-container {
+  background-color: #ffe0e0; /* same as Home page background */
+}
+
+/* Make Checkout container slightly transparent to show background */
+.checkout-container {
+  background: rgba(255, 255, 255, 0.9);
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4caf50;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-weight: 500;
+  z-index: 1000;
+  animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
