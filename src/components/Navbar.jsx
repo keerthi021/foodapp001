@@ -11,15 +11,6 @@ export default function Navbar({ cartCount }) {
         <Link to="/" className="logo-text">MyRestaurants</Link>
       </div>
 
-      {/* Center: Search Bar */}
-      <div className="navbar-center">
-        <input
-          type="text"
-          placeholder="Search restaurants..."
-          className="search-bar"
-        />
-      </div>
-
       {/* Right: Nav Links */}
       <div className={`navbar-right ${showMenu ? "active" : ""}`}>
         <Link to="/">Home</Link>
