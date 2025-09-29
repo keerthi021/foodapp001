@@ -1,30 +1,33 @@
-import React, { useState } from "react";
-import RestaurantCard from "../components/RestaurantCard";
-import { restaurants } from "../data/restaurants";
+import React from "react";
 
 export default function Home() {
-  const [showRestaurants, setShowRestaurants] = useState(false);
+  const reviews = [
+    { id: 1, name: "John Doe", rating: 5, comment: "Amazing food and great service!" },
+    { id: 2, name: "Jane Smith", rating: 4, comment: "Delicious dishes, will come again!" },
+    { id: 3, name: "Mike Johnson", rating: 5, comment: "Best restaurant in town!" },
+  ];
 
   return (
     <div className="home-container">
-      {!showRestaurants ? (
-        <div className="hero">
-          <h1>Welcome to Foodie 🍴</h1>
-          <p>Find the best food from top restaurants near you.</p>
-          <button
-            onClick={() => setShowRestaurants(true)}
-            className="explore-btn"
-          >
-            Explore Restaurants
-          </button>
+      {/* Hero Section */}
+      <div className="hero">
+        <div className="hero-content">
+          <h1>Welcome to MyRestaurants</h1>
+          <p>Discover the best restaurants around you.</p>
+          <a href="/restaurants" className="explore-btn">Explore</a>
         </div>
-      ) : (
-        <div className="restaurant-row">
-          {restaurants.map((restaurant) => (
-            <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-          ))}
-        </div>
-      )}
+      </div>
+
+      {/* Reviews Section */}
+      <div className="home-reviews">
+        {reviews.map((review) => (
+          <div key={review.id} className="review-card">
+            <h3>{review.name}</h3>
+            <p className="review-rating">{"⭐".repeat(review.rating)}</p>
+            <p className="review-comment">{review.comment}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

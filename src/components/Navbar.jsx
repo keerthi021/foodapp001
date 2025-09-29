@@ -1,22 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
-  return (
-    <header className="navbar">
-      {/* Logo Left */}
-      <div className="navbar-logo">🍴 Foodie</div>
+export default function Navbar({ cartCount }) {
+  const [showMenu, setShowMenu] = useState(false);
 
-      {/* Center Links */}
-      <nav className="navbar-links">
+  return (
+    <nav className="navbar">
+      {/* Left: Logo */}
+      <div className="navbar-left">
+        <Link to="/" className="logo-text">MyRestaurants</Link>
+      </div>
+
+      {/* Center: Search Bar */}
+      <div className="navbar-center">
+        <input
+          type="text"
+          placeholder="Search restaurants..."
+          className="search-bar"
+        />
+      </div>
+
+      {/* Right: Nav Links */}
+      <div className={`navbar-right ${showMenu ? "active" : ""}`}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-      </nav>
-
-      {/* Cart Right */}
-      <div className="navbar-cart">
-        <Link to="/checkout">Cart 🛒</Link> {/* Updated to Checkout page */}
+        <Link to="/cart">
+          Cart {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+        </Link>
+        <Link to="/login">Login</Link>
       </div>
-    </header>
+
+      {/* Hamburger menu for mobile */}
+      <div className="hamburger" onClick={() => setShowMenu(!showMenu)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
   );
 }
