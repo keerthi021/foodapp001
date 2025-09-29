@@ -1,24 +1,36 @@
 import React, { useState } from "react";
 
-export default function Login() {
+export default function Signup() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simple demo validation
-    if (email === "user@example.com" && password === "123456") {
-      setMessage("Login successful!");
-    } else {
-      setMessage("Invalid email or password.");
-    }
+    setMessage("Signup successful!");
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
+    <div className="signup-container">
+      {/* Image section */}
+      <div className="signup-images">
+        <img src="/images/res.jpg" alt="Hotel" className="signup-image" />
+        <img src="/images/food.jpg" alt="Food" className="signup-image" />
+      </div>
+
+      {/* Form section */}
+      <form className="signup-form" onSubmit={handleSubmit}>
+        <h2>Sign Up</h2>
+
+        <label>Name</label>
+        <input
+          type="text"
+          value={name}
+          placeholder="Enter your name"
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
 
         <label>Email</label>
         <input
@@ -38,9 +50,12 @@ export default function Login() {
           required
         />
 
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
 
-        {message && <p className="login-message">{message}</p>}
+        {message && <p className="signup-message">{message}</p>}
+        <p style={{ textAlign: "center", marginTop: "10px" }}>
+          Already have an account? <a href="/login">Login</a>
+        </p>
       </form>
     </div>
   );
