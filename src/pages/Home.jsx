@@ -11,6 +11,7 @@ export default function Home() {
     <div className="home-container">
       {/* Hero Section */}
       <div className="hero">
+        <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1>Welcome to MyRestaurants</h1>
           <p>Discover the best restaurants around you.</p>

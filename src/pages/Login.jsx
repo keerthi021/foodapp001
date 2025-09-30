@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from "react";  
 
-export default function Signup() {
+export default function Signin() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -8,7 +8,7 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMessage("Signup successful!");
+    setMessage("Signin successful!");
   };
 
   return (
@@ -21,7 +21,7 @@ export default function Signup() {
 
       {/* Form section */}
       <form className="signup-form" onSubmit={handleSubmit}>
-        <h2>Sign Up</h2>
+        <h2>Signin</h2>
 
         <label>Name</label>
         <input
@@ -50,11 +50,11 @@ export default function Signup() {
           required
         />
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">Signin</button>
 
         {message && <p className="signup-message">{message}</p>}
         <p style={{ textAlign: "center", marginTop: "10px" }}>
-          Already have an account? <a href="/login">Login</a>
+          Already have an account? <a href="/login">Login</a> {/* 🔹 changed text to Login */}
         </p>
       </form>
     </div>
