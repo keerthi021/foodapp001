@@ -25,10 +25,14 @@ export default function Signin() {
 
         <label>Name</label>
         <input
+      
           type="text"
           value={name}
           placeholder="Enter your name"
-          onChange={(e) => setName(e.target.value)}
+           onChange={(e) => {
+    const lettersOnly = e.target.value.replace(/[^a-zA-Z\s]/g, ""); // allow letters and space
+    setName(lettersOnly);
+  }}
           required
         />
 

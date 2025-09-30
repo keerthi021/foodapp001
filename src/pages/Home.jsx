@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const reviews = [
@@ -15,7 +16,9 @@ export default function Home() {
         <div className="hero-content">
           <h1>Welcome to MyRestaurants</h1>
           <p>Discover the best restaurants around you.</p>
-          <a href="/restaurants" className="explore-btn">Explore</a>
+          <Link to="/restaurants" className="explore-btn">
+  Explore
+</Link>
         </div>
       </div>
 
